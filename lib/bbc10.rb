@@ -5,9 +5,9 @@ require 'nokogiri'
 module Bbcmostread
   class Error < StandardError; end
 
-  url = 'https://www.bbc.co.uk/news'
+  URL = 'https://www.bbc.co.uk/news'
 
-  doc = Nokogiri::HTML(open(url).read)
+  doc = Nokogiri::HTML(open(URL).read)
 
   links = doc.css('.nw-c-most-read__items a').map{|link| 'https://www.bbc.co.uk/' << link['href']}
 
