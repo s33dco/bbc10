@@ -8,7 +8,6 @@ Gem::Specification.new do |spec|
   spec.version       = Bbc10::VERSION
   spec.authors       = ["s33dco"]
   spec.email         = ["code@s33d.co"]
-
   spec.summary       = %q{Top ten stories from the BBC}
   spec.description   = %q{Scrape the ten most read stories from www.bbc.co.uk into your terminla window.}
   spec.homepage      = "https://github.com/s33dco/bbc10"
