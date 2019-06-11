@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description  = File.read(File.join(File.dirname(__FILE__), 'README.md'))
   s.author       = "s33dco"
   s.email        = "code@s33d.co"
-  s.files         = Dir["{bin,lib}/**/*"] + %w(LICENSE README)
+  s.files         = Dir["{bin,lib}/**/*"] + %w(LICENSE README.md)
   s.homepage     = "https://github.com/s33dco/bbc10"
   s.executables   = [ 'bbc10' ]
   s.required_ruby_version = '>=2.5'
