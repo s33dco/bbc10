@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require_relative '../lib/bbc10/scraper'
+
+module Bbc10
+  URL = 'https://www.bbc.co.uk/news'
+  puts "\n\nScraping the most read from #{URL}..."
+  page = Scraper::read_page(URL)
+  links = Scraper::get_links(page)
+  links.each do | link |
+    puts "\n\n#{link}\n\n\n"
+    story = Scraper::read_page(link)
+    Scraper::scrape_story(story)
+  end
+end
