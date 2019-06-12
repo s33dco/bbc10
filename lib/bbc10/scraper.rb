@@ -10,7 +10,7 @@ module Bbc10
     end
 
     def self.get_links(page)
-      page.css('.nw-c-most-read__items a').map{|link| 'https://www.bbc.co.uk/' << link['href']}
+      page.css('.nw-c-most-read__items a').map{|link| 'https://www.bbc.co.uk' << link['href']}
     end
 
     def self.scrape_story(story)
