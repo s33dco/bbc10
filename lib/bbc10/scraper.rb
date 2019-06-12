@@ -14,7 +14,12 @@ module Bbc10
     end
 
     def self.scrape_story(story)
-      story.css('.story-body__inner p').map(&:content).each{|para| puts "#{para}\n\n"}
+      article = story.css('.story-body__inner p').map(&:content)
+      if article.empty?
+        puts "\nFailed to scrape - use link above\n\n"
+      else
+        article.each{|para| puts "#{para}\n\n"}
+      end
     end
   end
 end

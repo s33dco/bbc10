@@ -7,7 +7,7 @@ module Bbc10
   page = Scraper::read_page(URL)
   links = Scraper::get_links(page)
   links.each do | link |
-    puts "\n\n#{link}\n\n\n"
+    puts "\n\n#{link}\n\n"
     story = Scraper::read_page(link)
     Scraper::scrape_story(story)
   end
