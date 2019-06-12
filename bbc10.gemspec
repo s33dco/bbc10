@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name         = "bbc10"
-  s.version      = "1.0.2"
+  s.version      = "1.0.4"
   s.licenses     = ['MIT']
   s.summary      = "Scrape the ten most read stories from www.bbc.co.uk to your terminal window"
   s.description  = File.read(File.join(File.dirname(__FILE__), 'README.md'))
