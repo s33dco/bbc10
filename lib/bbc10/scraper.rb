@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require "open-uri"
+require 'open-uri'
 require 'nokogiri'
 
 module Bbc10
@@ -10,7 +11,8 @@ module Bbc10
     end
 
     def self.get_links(page)
-      page.css('.nw-c-most-read__items a').map{|link| 'https://www.bbc.co.uk' << link['href']}
+      page.css('.nw-c-most-read__items a')
+          .map { |link| 'https://www.bbc.co.uk' << link['href'] }
     end
 
     def self.scrape_story(story)
@@ -18,7 +20,7 @@ module Bbc10
       if article.empty?
         puts "\nFailed to scrape - use link above\n\n"
       else
-        article.each{|para| puts "#{para}\n\n"}
+        article.each { |para| puts "#{para}\n\n" }
       end
     end
   end

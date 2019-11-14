@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bbc10 (1.0.3)
+    bbc10 (1.0.5)
 
 GEM
   remote: https://rubygems.org/

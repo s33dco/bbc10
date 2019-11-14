@@ -1,29 +1,29 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require_relative '../lib/bbc10/scraper'
 
 module Bbc10
   URL = 'https://www.bbc.co.uk/news'
   puts "\n\n🗞  Scraping the most read from #{URL}..."
   begin
-    page = Scraper::read_page(URL)
-    links =  Scraper::get_links(page)
+    page = Scraper.read_page(URL)
+    links = Scraper.get_links(page)
     if links.empty?
       puts "\n\n❌ Failed to find top ten"
       raise exception
     else
       puts "\n🗞  #{links.length} articles found"
-      links.each do | link |
+      links.each do |link|
         puts "\n\n📰  #{link}\n\n"
-        story = Scraper::read_page(link)
-        Scraper::scrape_story(story)
+        story = Scraper.read_page(link)
+        Scraper.scrape_story(story)
       end
       puts "♥️ s33dco\n\n"
     end
-
-  rescue => exception
+  rescue StandardError => 
     puts "\n\n❌ somethings not right."
     puts "Maybe check they're available on the link below :"
     puts "\n#{URL}\n\n"
   end
-
 end
