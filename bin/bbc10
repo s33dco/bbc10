@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
 
 require_relative '../lib/bbc10/scraper'
 
@@ -21,8 +20,9 @@ module Bbc10
       end
       puts "♥️ s33dco\n\n"
     end
-  rescue StandardError => 
+  rescue StandardError => e
     puts "\n\n❌ somethings not right."
+    puts "#{e}"
     puts "Maybe check they're available on the link below :"
     puts "\n#{URL}\n\n"
   end
